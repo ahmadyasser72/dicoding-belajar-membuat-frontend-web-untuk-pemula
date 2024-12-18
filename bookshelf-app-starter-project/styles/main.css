@@ -1,0 +1,131 @@
+html {
+  font-family: Arial, sans-serif;
+  color: var(--primary-fg);
+  background-color: var(--primary-bg);
+
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-3) var(--secondary-bg);
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  background-color: var(--secondary-bg);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  color: var(--accent-3);
+  padding: 12px 0;
+}
+
+h2,
+h3 {
+  color: var(--accent-2);
+  margin: 4px 0;
+  padding: 4px 0;
+}
+
+h2 {
+  border-bottom: 2px dashed var(--secondary-fg);
+}
+
+main {
+  max-width: 60ch;
+  margin: auto;
+}
+
+section {
+  margin: 12px 8px;
+  background-color: var(--secondary-bg);
+
+  border-radius: 20px;
+  border: 1px solid var(--secondary-fg);
+}
+
+section,
+form {
+  padding: 16px 24px;
+}
+
+form > div {
+  margin: 8px 0;
+}
+
+form#bookForm > div,
+form#searchBook {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 5fr;
+  grid-auto-flow: dense;
+  gap: 8px 16px;
+}
+
+form#bookForm button > span {
+  text-decoration-line: underline;
+}
+
+form label {
+  text-align: end;
+}
+
+form input[type="checkbox"] {
+  justify-self: start;
+}
+
+button {
+  border: 1px solid var(--primary-fg);
+  padding: 8px 12px;
+  background-color: var(--primary-bg);
+  color: var(--primary-fg);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form button {
+  width: 100%;
+  grid-column: span 2;
+}
+
+div#incompleteBookList,
+div#completeBookList {
+  margin: 8px 0;
+}
+
+:where(div#incompleteBookList, div#completeBookList) > div {
+  padding: 8px;
+  border: 1px solid var(--secondary-fg);
+}
+
+:where(div#incompleteBookList, div#completeBookList) > :not(div:first-child) {
+  margin-top: 8px;
+}
+
+button[data-testid="bookItemIsCompleteButton"] {
+  color: var(--primary-bg);
+  background-color: var(--accent-3);
+  border-color: currentColor;
+}
+
+button[data-testid="bookItemDeleteButton"] {
+  color: var(--primary-bg);
+  background-color: var(--accent-1);
+  border-color: currentColor;
+}
+
+button[data-testid="bookItemEditButton"] {
+  color: var(--primary-bg);
+  background-color: var(--accent-2);
+  border-color: currentColor;
+}
